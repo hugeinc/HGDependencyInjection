@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 HUGE Inc. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 @class HGDIImplementation;
 
 @interface HGDIContainer : NSObject

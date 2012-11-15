@@ -6,14 +6,15 @@
 //  Copyright (c) 2012 HUGE Inc. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 
-@class HGDiContainer;
+@class HGDIContainer;
 
 @interface HGDIImplementation : NSObject
 
 @property (nonatomic, strong) NSMutableDictionary *parameters;
 @property (nonatomic, readwrite, getter = isNewInstanceSupported) BOOL newInstanceSupported;
-@property (nonatomic, weak) HGDiContainer *serviceContainer;
+@property (nonatomic, weak) HGDIContainer *serviceContainer;
 
 - (id)instance;
 - (id)newInstance;
