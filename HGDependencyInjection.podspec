@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "HGDependencyInjection"
   s.version      = "0.0.1"
-  s.summary      = "Objective-C minimul DI framework."
+  s.summary      = "Objective-C minimal DI framework."
   s.homepage     = "http://www.github.com/hugeinc/HGDependencyInjection"
   s.license      = 'Apache License, Version 2.0'
   s.author       = { "Marc Ammann" => "mammann@hugeinc.com" }
