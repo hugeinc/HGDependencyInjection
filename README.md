@@ -16,7 +16,7 @@ HGDI's flexibility gives us the ability to use hybrids of the three of approache
 ## Features
 
 * Constructor Based / Service Locator Based Dependency Injection
-* ServiceContainer Supports
+* Service Container Support
 	* Class Instances
 	* Protocol Instance
 	* Keyed Instance Support
@@ -24,7 +24,7 @@ HGDI's flexibility gives us the ability to use hybrids of the three of approache
 	
 # Using HGDI
 
-The basic concept behind CSMapper is a three steps :
+The basic concept behind CSMapper is a three steps:
 
 1. Create a shared instance of the `HGDIContainer`
 2. Create `HGDIImplementation` instance of one of the following types:
@@ -33,7 +33,7 @@ The basic concept behind CSMapper is a three steps :
 3. Register the `HGDIImplementation` with the service container 
 
 
-The service container holds reference to constructor, instance, protocol specific, and keyed instantances to be shared by the application. Generally we want to feed the service container itself, or a container object that holds reference of the service container, to all our instances via constructors. This allows class instances to use the service container at a later point to instantiate new objects with their respective dependencies accordingly. 
+The service container holds reference to constructor, instance, protocol specific, and keyed instances to be shared by the application. Generally we want to feed the service container itself, or a container object that holds reference of the service container, to all our instances via constructors. This allows class instances to use the service container at a later point to instantiate new objects with their respective dependencies accordingly. 
 
 Lets look at some examples :)
 
@@ -41,7 +41,7 @@ Lets look at some examples :)
 
 ####Register Constructor Implementation
 
-First we instantiate an instance of `HGDIConstructorImplementation` for a specific class. In this constructor we feed our dependencies, the shared instance of the service container in this example, accordingly to the view controller.
+First we instantiate an `HGDIConstructorImplementation` instance for a specific class, in which we feed our dependencies. The shared instance of the service container in this example, accordingly to the view controller.
 
 ```
 __weak __typeof__(self) blockSelf = self;
@@ -65,7 +65,7 @@ Then we register the constructor with the shared serviceContainer instance
 
 #### Parent Class Instantiation via Constructor Implementation
 
-Once the constructor has been registered, a dependency injected instance can be instantiated using the service container.
+Once the constructor has been registered, the object can be instantiated with all the injected dependencied using the service container.
 
 ``` 
 DIParentViewController *p = [self.serviceContainer newInstanceForClass:[DIParentViewController class]];
@@ -145,7 +145,7 @@ DIService<DIProtocol> protocolInstance = [self.serviceContainer instanceForProto
 
 ## Keyed Instance Implementation
 
-An instance of an can be registered for specific developer defined instance key, and accesed from the service container using the key. The Keyed implementation follows the exact same pattern as the __Instance / Protocol Instance Implementation__ examples, with a few minor differences. 
+An instance of an can be registered for specific developer defined instance key, and accessed from the service container using the key. The Keyed implementation follows the exact same pattern as the __Instance / Protocol Instance Implementation__ examples, with a few minor differences. 
 
 
 ####Register Keyed Instance Implementation
@@ -179,7 +179,7 @@ From time to time we need to include some specific parameters into our construct
 
 ####Register Parameters For Constructor Implementation
 
-For this example let's pretend we have an `DIHTTPCLient` class, which will have it's own constructor in the service container. 
+For this example let's pretend we have an `DIHTTPCLient` class.
 
 ```
 @interface DIHTTPClient : NSObject
